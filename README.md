@@ -1,12 +1,13 @@
 # 🚀 Trilha de Inteligência Artificial - Rocketseat
 
-![IA Logo](6c2beacf-efd8-434d-912e-b93023982b4a.png)
+<img width="284" height="268" alt="image" src="https://github.com/user-attachments/assets/6dd5036c-79c4-4c4d-87b5-9fa95aa15621" />
+
 
 Nesta trilha você irá conhecer os tópicos essenciais sobre o desenvolvimento de **Inteligências Artificiais**, se aventurar no ecossistema e aprender na prática todas as possibilidades que essa área tem para oferecer.  
 
 A trilha começa pela **introdução histórica** da área, passa por uma **revisão de estatística**, **análise exploratória de dados** e, a partir daí, mergulha nos **fundamentos do aprendizado de máquina**.  
 
-## 📚 O que você vai aprender
+## 📚 Aprendizado
 - Introdução e evolução da Inteligência Artificial  
 - Conceitos de estatística aplicados a dados  
 - Técnicas de análise exploratória de dados (EDA)  
