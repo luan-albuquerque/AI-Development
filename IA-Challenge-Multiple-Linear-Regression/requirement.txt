@@ -1,0 +1,13 @@
+scikit-learn 
+scipy 
+pandas 
+matplotlib 
+statsmodels 
+fastapi 
+uvicorn 
+pydantic
+pingouin 
+seaborn 
+ipykernel
+joblib
+gradio
