@@ -15,6 +15,8 @@ pydantic = "*"
 pingouin = "*"
 seaborn = "*"
 ipykernel = "*"
+joblib = "*"
+gradio = "*"
 
 [dev-packages]
 jupyter = "*"

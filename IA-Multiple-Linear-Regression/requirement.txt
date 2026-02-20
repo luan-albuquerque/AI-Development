@@ -9,3 +9,5 @@ pydantic
 pingouin 
 seaborn 
 ipykernel
+joblib
+gradio
