@@ -107,3 +107,25 @@ Exemplos de relações não lineares:
 Ou seja, a regressão polinomial é basicamente:
 
 > Engenharia de atributos + regressão linear
+
+
+## 🧠 Por que o código foi estruturado dessa forma?
+
+O código original não faz apenas o básico; ele adota três grandes boas práticas estruturais para garantir que o modelo de *Machine Learning* seja robusto e confiável para cenários reais:
+
+### 1. Prevenção de Vazamento de Dados (*Data Leakage*) com `Pipeline`
+O código utiliza o `StandardScaler` para padronizar as variáveis numéricas. Em *Machine Learning*, a regra de ouro é: você só deve calcular a média e o desvio padrão usando exclusivamente os dados de **treino**. 
+* **O Risco:** Se você padronizar o dataset inteiro antes de dividir, informações dos dados de teste acabam "vazando" para o modelo, criando uma falsa sensação de precisão (*Data Leakage*). 
+* **A Solução:** O uso de um `Pipeline` garante que as transformações (padronização e criação de *features* polinomiais) aprendam **apenas** com os dados de treino dentro de cada rodada, blindando o seu modelo.
+
+### 2. Validação Cruzada (`KFold`)
+Em vez de depender de um simples `train_test_split` (uma divisão única entre treino e teste), o código utiliza o `KFold(n_splits=5)`. 
+
+
+
+* **Como funciona:** Ele divide os seus dados em 5 partes (*folds*). O modelo é treinado 5 vezes; em cada uma delas, ele usa 4 partes para treinar e deixa 1 parte diferente para testar. 
+* **A Vantagem:** Isso permite calcular a média das métricas de erro e acerto (como o R² e o RMSE), garantindo que a precisão do seu modelo é real e consistente, e não apenas "sorte" ou "azar" na hora de separar os dados.
+
+### 3. Organização Escalável (`ColumnTransformer`)
+O código isola as colunas numéricas específicas (`tempo_na_empresa` e `nivel_na_empresa`) para aplicar a padronização isoladamente nelas antes de elevar ao grau polinomial.
+* **A Vantagem:** Essa modularidade deixa a porta aberta para, no futuro, adicionar transformações em variáveis categóricas (como *One-Hot Encoding*) de forma limpa, sem quebrar a lógica do código atual.
